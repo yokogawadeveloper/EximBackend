@@ -52,7 +52,7 @@ class InlineItem(models.Model):
     warranty_flag = models.CharField(max_length=100, null=True, blank=True)
     quantity = models.IntegerField(null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, help_text='Only USD amount', null=True, blank=True)
-    total_amount = models.GeneratedField(expression=F('price') - F('quantity'), output_field=models.BigIntegerField(),db_persist=True)
+    total_amount = models.GeneratedField(expression=F('price') * F('quantity'), output_field=models.BigIntegerField(),db_persist=True)
     is_active = models.BooleanField(default=True)
 
 

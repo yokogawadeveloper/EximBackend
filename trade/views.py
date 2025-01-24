@@ -8,7 +8,7 @@ from .serializers import *
 class MasterItemBatchViewSet(viewsets.ModelViewSet):
     queryset = MasterItem.objects.prefetch_related('inline_items')
     serializer_class = MasterItemBatchSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         return self.queryset.filter(is_active=True)
@@ -17,7 +17,7 @@ class MasterItemBatchViewSet(viewsets.ModelViewSet):
 class InlineItemViewSet(viewsets.ModelViewSet):
     queryset = InlineItem.objects.all()
     serializer_class = InlineItemSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         return InlineItem.objects.filter(is_active=True)
