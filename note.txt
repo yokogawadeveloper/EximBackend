@@ -1,0 +1,5 @@
+-------------------------- Admin Credential-------------------
+username: admin
+password: admin@12345
+
+-------------------------- Admin Credential-------------------
